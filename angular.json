@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "thursday"
+    }
+  },
+  "defaultProject": "thursday",
+  "cli": {
+    "analytics": "0b38560c-00d1-4fe3-9f26-1eeb53b367d1"
+  }
 }
