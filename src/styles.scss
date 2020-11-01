@@ -1,8 +1,15 @@
 /*Include fonts configuration*/
-@import "fonts";
+@import "base";
 
 * {
   font-family: "roboto-regular", serif !important;
   padding: 0 !important;
   margin: 0 !important;
+}
+
+hr {
+  margin-top: 1.25rem !important;
+  margin-bottom: 1.25rem !important;
+  border: 0 !important;
+  border-top: 1px solid $light-grey !important;
 }

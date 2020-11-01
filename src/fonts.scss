@@ -1,3 +1,5 @@
+@import "colors";
+
 @font-face {
   font-family: 'roboto-regular';
   src: url('assets/fonts/Roboto/roboto-regular-webfont.woff2') format('woff2'),
@@ -105,4 +107,35 @@
   font-weight: normal;
   font-style: normal;
 
+}
+
+/*Fonts families*/
+.text-robotothin {
+  font-family: "roboto-thin", serif !important;
+}
+
+.text-robotolight {
+  font-family: "roboto-light", serif !important;
+}
+
+.text-robotoblack {
+  font-family: "roboto-black", serif !important;
+}
+
+.text-robotomedium {
+  font-family: "roboto-medium", serif !important;
+}
+
+.text-robotobold {
+  font-family: "roboto-bold", serif !important;
+}
+
+/*Fonts weights*/
+.text-bold {
+  font-weight: bold !important;
+}
+
+/*Fonts colors*/
+.text-primary {
+  color: $primary;
 }

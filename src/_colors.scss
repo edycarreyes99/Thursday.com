@@ -1,10 +1,12 @@
 /* Custom colors variables */
 $color-blue-navy: #051540;
 $light: #f7f7f7;
-$primary: #0d91ca;
+$primary: #0fa2e2;
+$primary-hover: #0d91ca;
 $grey: #c5c7d0;
 $light-grey: #e0e0e0;
-$dark-grey: rgba(0, 0, 0, 0.2);
+$semi-dark: #323338;
+$dark-grey: #777;
 $white: #FFFFFF;
 $theme-colors: (
   'blue-navy': $color-blue-navy,
@@ -14,4 +16,7 @@ $theme-colors: (
   'light-grey': $light-grey,
   'grey': $grey,
   'white':$white,
+  'primary':$primary,
+  'primary-hover':$primary-hover,
+  'semi-dark':$semi-dark,
 );

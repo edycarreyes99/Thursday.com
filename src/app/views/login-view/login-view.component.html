@@ -1,4 +1,78 @@
+<app-navbar></app-navbar>
 <div class="login-view">
-  <app-navbar></app-navbar>
-  <p>login-view works!</p>
+  <div class="login">
+    <div class="form">
+      <form (submit)="login($event)" class="login-form">
+        <h1 class="login-title">
+          <b class="text-robotoblack">Log </b> <span class="text-robotothin">In</span>
+        </h1>
+
+        <h2 class="text-robotothin margin-top-4">The Peak Beyond</h2>
+
+        <div class="form-input-row margin-top-4">
+          <input type="email" id="emailInput" placeholder="Enter your email.">
+          <label for="emailInput">Email</label>
+        </div>
+
+        <div class="form-input-row margin-top-0 margin-bottom-2">
+          <input type="password" id="passwordInput" placeholder="Enter your password.">
+          <label for="passwordInput">Password</label>
+        </div>
+
+        <span class="text-robotolight text-primary forgot-password">
+      Forgot your password?
+    </span>
+        <br>
+
+        <button class="login-button margin-top-4" (click)="login($event)">
+          <span>Log In </span><i class="fas fa-arrow-right margin-left-2"></i>
+        </button>
+
+        <div class="signin-alter margin-top-4">
+          <div class="line"></div>
+          <div class="signin-alter-text">Or Sign in with</div>
+        </div>
+
+        <div class="social-buttons">
+          <div class="social-login-button">
+        <span>
+          <img src="../../../assets/images/google-logo.svg" alt="Google logo" class="social-logo" width="24"
+               height="24">
+        </span>
+            <span class="social-text">
+          Google
+        </span>
+          </div>
+
+          <div class="social-login-button">
+        <span>
+          <img src="../../../assets/images/slack-logo.svg" alt="Slack logo" class="social-logo" width="24"
+               height="24">
+        </span>
+            <span class="social-text">
+          Slack
+        </span>
+          </div>
+
+          <div class="social-login-button">
+        <span>
+          <img src="../../../assets/images/linkedin-logo.svg" alt="LinkedIn logo" class="social-logo" width="24"
+               height="24">
+        </span>
+            <span class="social-text">
+          LinkedIn
+        </span>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="signup margin-top-4">
+      <hr>
+      <span class="has-account-text">If you have an <b>@thepeakbeyond.com</b> email, you can</span>
+      <br>
+      <a routerLink="/" class="signup-text">Sign Up To The Peak Beyond's account</a>
+      <hr>
+    </div>
+  </div>
 </div>
