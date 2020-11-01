@@ -1,5 +1,8 @@
 /* Custom colors variables */
 $color-blue-navy: #051540;
+$secondary: #292F4C;
+$secondary-selected: rgba(255, 255, 255, 0.1);
+$secondary-hover: rgba(0, 0, 0, 0.25);
 $light: #f7f7f7;
 $primary: #0fa2e2;
 $primary-hover: #0d91ca;
@@ -19,4 +22,7 @@ $theme-colors: (
   'primary':$primary,
   'primary-hover':$primary-hover,
   'semi-dark':$semi-dark,
+  'secondary':$secondary,
+  'secondary-selected':$secondary-selected,
+  'secondary-hover':$secondary-hover,
 );
