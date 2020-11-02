@@ -9,6 +9,7 @@ const routes: Routes = [
   {path: '', component: LoginViewComponent},
   {path: 'login', component: LoginViewComponent},
   {path: 'dashboard', component: DashboardViewComponent},
+  {path: 'dashboard/boards/:id', component: DashboardViewComponent},
 ];
 
 @NgModule({

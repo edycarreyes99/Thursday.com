@@ -10,7 +10,8 @@ export class SidenavComponent implements OnInit {
   sidenavElement: HTMLElement;
   boardsElement: HTMLElement;
   boardsBottomElement: HTMLElement;
-  toggleIconElement: HTMLElement;
+  mainElement: HTMLElement;
+  boardsActive = true;
 
   constructor() {
   }
@@ -19,7 +20,7 @@ export class SidenavComponent implements OnInit {
     this.sidenavElement = document.getElementById('sidenav');
     this.boardsElement = document.getElementById('boards-container');
     this.boardsBottomElement = document.getElementById('boards-bottom');
-    this.toggleIconElement = document.getElementById('toggleIcon');
+    this.mainElement = document.getElementById('main');
   }
 
   closeSideNav(): void {
@@ -34,11 +35,17 @@ export class SidenavComponent implements OnInit {
     if (this.boardsElement.style.width === '0rem') {
       this.boardsElement.style.width = '16rem';
       this.boardsBottomElement.style.display = 'flex';
-      this.toggleIconElement.style.transform = 'rotate(180deg)';
+      this.boardsActive = true;
+      this.mainElement.style.marginLeft = '23.2rem !important';
+      this.mainElement.style.marginLeft = null;
+      this.mainElement.classList.remove('margin-deactivate');
+      this.mainElement.classList.add('margin-active');
     } else {
       this.boardsElement.style.width = '0rem';
       this.boardsBottomElement.style.display = 'none';
-      this.toggleIconElement.style.transform = 'rotate(-180deg)';
+      this.boardsActive = false;
+      this.mainElement.classList.remove('margin-active');
+      this.mainElement.classList.add('margin-deactivate');
     }
   }
 
