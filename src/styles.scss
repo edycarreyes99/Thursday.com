@@ -15,7 +15,11 @@ hr {
 }
 
 button:focus {
-  outline: none;
+  outline: none !important;
+}
+
+input:focus {
+  outline: none !important;
 }
 
 button {
