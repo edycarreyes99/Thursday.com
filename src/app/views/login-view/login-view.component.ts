@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
+import {SidenavComponent} from '../../components/sidenav/sidenav.component';
 
 @Component({
   selector: 'app-login-view',
@@ -9,12 +10,14 @@ import {Router} from '@angular/router';
 export class LoginViewComponent implements OnInit {
 
   constructor(
-    private router: Router
+    private router: Router,
+    private sidenav: SidenavComponent
   ) {
   }
 
   ngOnInit(): void {
     this.login(null);
+    this.sidenav.closeSideNav();
   }
 
   // Funcion para login
