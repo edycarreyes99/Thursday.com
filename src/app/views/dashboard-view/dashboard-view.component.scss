@@ -1,0 +1,97 @@
+@import "src/scss/base";
+
+.dashboard-view {
+  .header {
+    display: flex;
+    justify-content: space-between;
+
+    .boards-info {
+      display: flex;
+      flex-direction: column;
+
+      .board-title {
+        font-family: "roboto-regular", serif !important;
+        cursor: text;
+
+        &:hover {
+          border: 1px dashed $grey-border;
+        }
+      }
+
+      .board-desc {
+        font-family: "roboto-medium", serif !important;
+        color: $grey;
+        cursor: text;
+
+        &:hover {
+          border: 1px dashed $grey-border;
+        }
+      }
+    }
+
+    .boards-actions {
+      display: flex;
+
+      .button-outline, .button-flat {
+        border: 1px solid $light-grey;
+        border-radius: 0.4rem;
+        font-size: 1rem;
+        padding: 0.7rem !important;
+        background-color: $white;
+        color: $semi-dark;
+        margin-right: 0.5rem !important;
+        max-height: 3rem;
+
+        &:hover {
+          background-color: $light-grey;
+        }
+      }
+
+      .button-flat {
+        border: none !important;
+      }
+
+      .group-button {
+        border-radius: 0.4rem;
+        margin-right: 0.2rem !important;
+        max-height: 3rem;
+
+        button {
+          border: 1px solid $light-grey;
+          background-color: $white;
+          font-size: 1rem;
+          color: $semi-dark;
+          padding: 10px 24px !important;
+          cursor: pointer;
+          float: left;
+          height: 3rem;
+
+          &:not(:last-child) {
+            border-right: none;
+          }
+
+          &:first-child {
+            border-top-left-radius: 0.4rem;
+            border-bottom-left-radius: 0.4rem;
+          }
+
+          &:last-child {
+            border-top-right-radius: 0.4rem;
+            border-bottom-right-radius: 0.4rem;
+            color: $primary;
+          }
+
+          &:hover {
+            background-color: $light-grey;
+          }
+        }
+
+        &:after {
+          content: "";
+          clear: both;
+          display: table;
+        }
+      }
+    }
+  }
+}
