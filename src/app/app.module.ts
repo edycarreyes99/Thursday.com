@@ -7,6 +7,7 @@ import {LoginViewComponent} from './views/login-view/login-view.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
 import {DashboardViewComponent} from './views/dashboard-view/dashboard-view.component';
 import {SidenavComponent} from './components/sidenav/sidenav.component';
+import { TasksTableComponent } from './components/tables/tasks-table/tasks-table.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import {SidenavComponent} from './components/sidenav/sidenav.component';
     LoginViewComponent,
     NavbarComponent,
     DashboardViewComponent,
-    SidenavComponent
+    SidenavComponent,
+    TasksTableComponent
   ],
   imports: [
     BrowserModule,
