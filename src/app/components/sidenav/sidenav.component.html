@@ -1,6 +1,5 @@
 <div class="sidenav-component">
   <div id="sidenav" class="sidenav">
-
     <div class="nav-top">
       <a href="#">
         <img class="surface-company-logo-image" src="../../../assets/images/mondaycom-icon.svg"
@@ -35,6 +34,63 @@
         <div class="avatar">
           <span class="initials">ER</span>
         </div>
+      </a>
+    </div>
+  </div>
+  <div id="boards-container" class="boards-container">
+    <button id="close-boards-btn" class="close-boards-btn" (click)="toggleBoards()">
+      <i class="fas fa-chevron-left" id="toggleIcon"></i>
+    </button>
+    <div class="boards-top">
+      <div class="boards-title">
+        <span class="boards-text"><i class="fas fa-briefcase board-icon"></i> Boards</span>
+        <i class="fas fa-bolt bolt-icon"></i>
+      </div>
+
+      <div class="boards margin-top-5">
+        <span class="main-boards-title"><b>Main  0</b></span>
+
+        <div class="boards-list">
+          <a class="margin-top-2 board-item active" href="">
+            R&D Scrum Planning
+          </a>
+          <a class="margin-top-2 board-item" href="">
+            Product
+          </a>
+          <a class="margin-top-2 board-item" href="">
+            Human Resources
+          </a>
+          <a class="margin-top-2 board-item" href="">
+            Marketing Content Planning
+          </a>
+
+          <button class="add-board-btn margin-top-3 float-right" id="add-board-btn">
+            <i class="fas fa-plus add-board-icon"></i> New
+          </button>
+
+          <span class="shareable-boards-title margin-top-5"><b>Shareable <i
+            class="fas fa-share-alt desc-boards-icon"></i>  0</b></span>
+
+          <button class="add-board-btn add-shareable-btn margin-top-3 float-right" id="add-shareable-btn">
+            <i class="fas fa-plus add-board-icon"></i> New
+          </button>
+
+          <span class="shareable-boards-title margin-top-5"><b>Private <i
+            class="fas fa-lock desc-boards-icon"></i>  0</b></span>
+
+          <button class="add-board-btn add-private-btn margin-top-3 float-right" id="add-private-btn">
+            <i class="fas fa-plus add-board-icon"></i> New
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="boards-bottom" id="boards-bottom">
+      <a class="margin-top-2 board-bottom-item" href="">
+        <i class="fas fa-columns board-icon"></i> Dashboards
+      </a>
+      <a class="margin-top-2 board-bottom-item" href="">
+        <i class="fas fa-calendar-check board-icon"></i> My Week
       </a>
     </div>
   </div>

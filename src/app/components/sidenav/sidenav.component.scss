@@ -64,9 +64,156 @@
     }
   }
 
+  .boards-container {
+    width: 16rem;
+    height: 100%;
+    position: fixed;
+    margin-left: 4.12rem !important;
+    background-color: $white;
+    border-right: 1px solid $grey-border;
+    padding: 1.5rem !important;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    transition: 0.5s;
+
+    .close-boards-btn {
+      right: -1rem !important;
+      border: 1px solid $grey-border;
+      border-radius: 1.25rem;
+      cursor: pointer;
+      padding-right: 0.6rem !important;
+      position: absolute;
+      width: 2rem;
+      height: 2rem;
+      top: 1rem;
+      z-index: 100;
+      transition: background-color 100ms ease, padding-left 100ms ease, padding-right 100ms ease, border-color 100ms ease, color 100ms ease;
+    }
+
+    .boards-top {
+      flex-grow: 1;
+      max-height: 80%;
+      overflow-y: auto;
+
+      .boards-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.5rem;
+
+        .boards-text {
+          color: $primary;
+          font-family: "roboto-medium", serif !important;
+
+          .board-icon {
+            margin-right: 1rem !important;
+          }
+        }
+
+        .bolt-icon {
+          color: $yellow;
+        }
+      }
+
+      .main-boards-title, .shareable-boards-title {
+        font-family: "roboto-bold", serif !important;
+        font-size: 1.2rem !important;
+      }
+
+      .boards-list {
+        display: flex;
+        flex-direction: column;
+
+        a {
+          text-decoration: none;
+          color: $dark-grey;
+          font-size: 1.2rem;
+          font-family: "roboto-medium", serif !important;
+        }
+
+        .active {
+          background-color: $primary-hover-light;
+          border-radius: 0.5rem;
+          color: $primary;
+        }
+
+        .board-item {
+          padding: 0.5rem !important;
+          border-radius: 0.5rem;
+
+          &:hover {
+            background-color: $grey-border;
+          }
+        }
+
+        .add-board-btn {
+          background-color: $primary;
+          color: $white;
+          padding: 0.7rem !important;
+          border: none;
+          border-radius: 2rem;
+          font-size: 1rem;
+          font-family: "roboto-medium", serif !important;
+          max-width: 8rem;
+          margin-left: auto !important;
+
+          .add-board-icon {
+            margin-right: 0.5rem !important;
+          }
+        }
+
+        .desc-boards-icon {
+          margin-left: 0.5rem !important;
+          margin-right: 0.5rem !important;
+        }
+
+        .add-shareable-btn {
+          background-color: $purple !important;
+        }
+
+        .add-private-btn {
+          background-color: $fuchsia !important;
+        }
+      }
+    }
+
+    .boards-bottom {
+      flex-shrink: 0;
+      border-top: 1px solid $grey-border;
+      padding-top: 2rem !important;
+      display: flex;
+      flex-direction: column;
+
+      a {
+        text-decoration: none;
+        color: $dark-grey;
+        font-size: 1.5rem;
+        font-family: "roboto-medium", serif !important;
+        display: inline;
+      }
+
+      .board-bottom-item {
+        padding: 0.5rem !important;
+        border-radius: 0.5rem;
+        color: $dark-grey;
+
+        .board-icon {
+          margin-right: 1rem !important;
+        }
+
+        &:hover {
+          background-color: $grey-border;
+        }
+      }
+    }
+  }
+
   #main {
     transition: margin-left .5s;
     padding: 20px;
+    margin-left: 23.2rem !important;
   }
 
   /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
