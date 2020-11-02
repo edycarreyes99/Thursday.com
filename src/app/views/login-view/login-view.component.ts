@@ -18,6 +18,7 @@ export class LoginViewComponent implements OnInit {
   ngOnInit(): void {
     this.login(null);
     this.sidenav.closeSideNav();
+    this.sidenav.hideBoards();
   }
 
   // Funcion para login

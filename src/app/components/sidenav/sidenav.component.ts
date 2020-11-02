@@ -49,4 +49,16 @@ export class SidenavComponent implements OnInit {
     }
   }
 
+  hideBoards(): void {
+    this.mainElement.classList.remove('margin-active');
+    this.mainElement.classList.add('margin-none');
+    this.boardsElement.style.display = 'none';
+  }
+
+  showBoards(): void {
+    this.mainElement.classList.remove('margin-none');
+    this.mainElement.classList.add('margin-active');
+    this.boardsElement.style.display = 'block';
+  }
+
 }
