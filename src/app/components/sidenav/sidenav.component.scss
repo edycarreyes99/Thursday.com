@@ -1,0 +1,229 @@
+@import "src/base";
+
+.sidenav-component {
+  /* The side navigation menu */
+  .sidenav {
+    height: 100%;
+    width: 4.12rem;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #292F4C;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-top: 0.5rem;
+    transition: 0.5s;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+
+    a {
+      margin: 0.5rem !important;
+      padding: 0.5rem !important;
+      text-decoration: none;
+      font-size: 1.4rem;
+      color: #FFFFFF;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 0.3s;
+      margin-bottom: 2rem !important;
+      border-radius: 0.5rem !important;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.25);
+      }
+    }
+
+    .active {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-top {
+      flex-grow: 1;
+    }
+
+    .nav-bottom {
+      flex-shrink: 0;
+    }
+
+    .avatar {
+      background-color: $primary;
+      border-radius: 50%;
+      height: $avatar-size;
+      text-align: center;
+      width: $avatar-size;
+      border: 2px solid $white;
+    }
+
+    .initials {
+      font-size: $avatar-size / 1.75;
+      line-height: 1;
+      position: relative;
+    }
+  }
+
+  .boards-container {
+    width: 16rem;
+    height: 100%;
+    position: fixed;
+    margin-left: 4.12rem !important;
+    background-color: $white;
+    border-right: 1px solid $grey-border;
+    padding: 1.5rem !important;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    transition: 0.5s;
+
+    .close-boards-btn {
+      right: -1rem !important;
+      border: 1px solid $grey-border;
+      border-radius: 1.25rem;
+      cursor: pointer;
+      padding-right: 0.6rem !important;
+      position: absolute;
+      width: 2rem;
+      height: 2rem;
+      top: 1rem;
+      z-index: 100;
+      transition: background-color 100ms ease, padding-left 100ms ease, padding-right 100ms ease, border-color 100ms ease, color 100ms ease;
+    }
+
+    .boards-top {
+      flex-grow: 1;
+      max-height: 80%;
+      overflow-y: auto;
+
+      .boards-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.5rem;
+
+        .boards-text {
+          color: $primary;
+          font-family: "roboto-medium", serif !important;
+
+          .board-icon {
+            margin-right: 1rem !important;
+          }
+        }
+
+        .bolt-icon {
+          color: $yellow;
+        }
+      }
+
+      .main-boards-title, .shareable-boards-title {
+        font-family: "roboto-bold", serif !important;
+        font-size: 1.2rem !important;
+      }
+
+      .boards-list {
+        display: flex;
+        flex-direction: column;
+
+        a {
+          text-decoration: none;
+          color: $dark-grey;
+          font-size: 1.2rem;
+          font-family: "roboto-medium", serif !important;
+        }
+
+        .active {
+          background-color: $primary-hover-light;
+          border-radius: 0.5rem;
+          color: $primary;
+        }
+
+        .board-item {
+          padding: 0.5rem !important;
+          border-radius: 0.5rem;
+
+          &:hover {
+            background-color: $grey-border;
+          }
+        }
+
+        .add-board-btn {
+          background-color: $primary;
+          color: $white;
+          padding: 0.7rem !important;
+          border: none;
+          border-radius: 2rem;
+          font-size: 1rem;
+          font-family: "roboto-medium", serif !important;
+          max-width: 8rem;
+          margin-left: auto !important;
+
+          .add-board-icon {
+            margin-right: 0.5rem !important;
+          }
+        }
+
+        .desc-boards-icon {
+          margin-left: 0.5rem !important;
+          margin-right: 0.5rem !important;
+        }
+
+        .add-shareable-btn {
+          background-color: $purple !important;
+        }
+
+        .add-private-btn {
+          background-color: $fuchsia !important;
+        }
+      }
+    }
+
+    .boards-bottom {
+      flex-shrink: 0;
+      border-top: 1px solid $grey-border;
+      padding-top: 2rem !important;
+      display: flex;
+      flex-direction: column;
+
+      a {
+        text-decoration: none;
+        color: $dark-grey;
+        font-size: 1.5rem;
+        font-family: "roboto-medium", serif !important;
+        display: inline;
+      }
+
+      .board-bottom-item {
+        padding: 0.5rem !important;
+        border-radius: 0.5rem;
+        color: $dark-grey;
+
+        .board-icon {
+          margin-right: 1rem !important;
+        }
+
+        &:hover {
+          background-color: $grey-border;
+        }
+      }
+    }
+  }
+
+  #main {
+    transition: margin-left .5s;
+    padding: 20px;
+    margin-left: 23.2rem !important;
+  }
+
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidenav {
+      padding-top: 15px;
+
+      a {
+        font-size: 18px;
+      }
+    }
+  }
+}

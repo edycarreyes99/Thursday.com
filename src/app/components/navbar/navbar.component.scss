@@ -1,0 +1,14 @@
+@import "src/colors";
+
+.navbar-component {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid $light-grey;
+  height: 65px;
+  background: $light;
+
+  .logo {
+    margin-top: 0.4rem !important;
+    margin-left: 1rem !important;
+  }
+}
