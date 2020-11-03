@@ -3,13 +3,14 @@ import {IUser} from './user';
 import {Moment} from 'moment';
 
 export interface ITask {
-  TID: string;
+  id: string;
   name: string;
   createdAt: number;
   taskCategory: ITaskCategory;
   createdBy: IUser;
   users: IUser[];
-  timeline: Moment;
+  timeline: { start: Moment, end: Moment };
+  priority: number;
 
   // Method to generate the Task's ID
   generateTID(): string;

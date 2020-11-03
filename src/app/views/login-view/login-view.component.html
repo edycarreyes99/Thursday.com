@@ -10,12 +10,12 @@
         <h2 class="text-robotothin margin-top-4">The Peak Beyond</h2>
 
         <div class="form-input-row margin-top-4">
-          <input type="email" id="emailInput" placeholder="Enter your email.">
+          <input type="email" id="emailInput" placeholder="Enter your email." [formControl]="email">
           <label for="emailInput">Email</label>
         </div>
 
         <div class="form-input-row margin-top-0 margin-bottom-2">
-          <input type="password" id="passwordInput" placeholder="Enter your password.">
+          <input type="password" id="passwordInput" placeholder="Enter your password." [formControl]="password">
           <label for="passwordInput">Password</label>
         </div>
 
