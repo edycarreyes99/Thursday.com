@@ -40,9 +40,9 @@ export class DatabaseService implements InMemoryDbService {
      * [UserModel] Entity
      */
     const users: IUser[] = [
-      new UserModel('rootadmin@thursday.com', true, 'Root Admin', 'R00t@dm!n'),
-      new UserModel('usera@thursday.com', false, 'User A', 'us3rA!'),
-      new UserModel('userb@thursday.com', false, 'User B', 'us3rB!'),
+      new UserModel('U-zxujRMkW', 'rootadmin@thursday.com', true, 'Root Admin', 'R00t@dm!n'),
+      new UserModel('U-n1od92jv', 'usera@thursday.com', false, 'User A', 'us3rA!'),
+      new UserModel('U-1pqa9123', 'userb@thursday.com', false, 'User B', 'us3rB!'),
     ];
 
     /**
@@ -214,7 +214,7 @@ export class DatabaseService implements InMemoryDbService {
         moment().milliseconds(),
         users[0],
         'PCT4',
-        taskCategories[5],
+        taskCategories[4],
         3,
         {
           start: moment().subtract(20, 'days'),
@@ -226,7 +226,7 @@ export class DatabaseService implements InMemoryDbService {
         moment().milliseconds(),
         users[0],
         'PCT5',
-        taskCategories[5],
+        taskCategories[4],
         5,
         {
           start: moment().subtract(2, 'days'),
@@ -264,7 +264,7 @@ export class DatabaseService implements InMemoryDbService {
         users[0],
         'Project C',
         'PC',
-        [taskCategories[4], taskCategories[5]],
+        [taskCategories[4]],
         [users[0], users[2]]
       )
     ];

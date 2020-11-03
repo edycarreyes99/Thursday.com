@@ -8,8 +8,8 @@ export class UserModel implements IUser {
   name: string;
   password: string;
 
-  constructor(email: string, isAdmin: boolean, name: string, password: string) {
-    this.id = this.generateUID();
+  constructor(id: string, email: string, isAdmin: boolean, name: string, password: string) {
+    this.id = id;
     this.email = email;
     this.isAdmin = isAdmin;
     this.name = name;

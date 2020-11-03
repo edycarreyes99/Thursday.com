@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {IProject} from '../../interfaces/project';
 import {GlobalService} from '../../services/global/global.service';
+import {IUser} from '../../interfaces/user';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-sidenav',
@@ -29,9 +31,6 @@ export class SidenavComponent implements OnInit {
     this.boardsElement = document.getElementById('boards-container');
     this.boardsBottomElement = document.getElementById('boards-bottom');
     this.mainElement = document.getElementById('main');
-
-    // Get all the projects
-    this.getProjects();
   }
 
   // Method to close the sidenav
@@ -77,9 +76,21 @@ export class SidenavComponent implements OnInit {
     this.boardsElement.style.display = 'block';
   }
 
+  // Method to get all projects
   getProjects(): void {
+    this.projects = [];
+    const currentUser: IUser = JSON.parse(localStorage.getItem('currentUser'));
+    console.log(currentUser);
     this.globalService.getProjects().subscribe((projects: IProject[]) => {
-      this.projects = projects;
+      projects.forEach(project => {
+        project.users.forEach(user => {
+          if (user.id === currentUser.id) {
+            this.projects.push(project);
+          }
+        });
+      });
+
+      console.log(this.projects);
     });
   }
 

@@ -1,46 +1,49 @@
 <div class="dashboard-view">
-  <div class="header">
-    <div class="boards-info">
-      <h2 class="board-title">Marketing Content Planning</h2>
-      <h4 class="board-desc margin-top-1">Let's get social!</h4>
-    </div>
-
-    <div class="boards-actions">
-      <button class="button-outline">Add View</button>
-
-      <div class="group-button">
-        <button>Unsuscribe</button>
-        <button><i class="fas fa-user-friends"></i> / 5</button>
-        <button><i class="fab fa-stumbleupon-circle"></i></button>
+  <div *ngIf="currentProject !== undefined">
+    <div class="header">
+      <div class="boards-info">
+        <h2 class="board-title">{{currentProject !== undefined ? currentProject.name : ''}}</h2>
+        <h4 class="board-desc margin-top-1">{{currentProject !== undefined ? currentProject.description : ''}}</h4>
       </div>
 
-      <button class="button-flat"><i class="fas fa-ellipsis-h"></i></button>
+      <div class="boards-actions">
+        <button class="button-outline">Add View</button>
+
+        <div class="group-button">
+          <button>Unsuscribe</button>
+          <button><i class="fas fa-user-friends"></i> / 5</button>
+          <button><i class="fab fa-stumbleupon-circle"></i></button>
+        </div>
+
+        <button class="button-flat"><i class="fas fa-ellipsis-h"></i></button>
+      </div>
     </div>
+    <div class="boards-management margin-top-4 margin-left-2">
+      <div class="collapse-button-container">
+        <button class="collapse-button">
+          <i class="fas fa-chevron-down"></i>
+          <i class="fas fa-chevron-up"></i>
+        </button>
+      </div>
+
+      <button class="add-board-btn margin-left-3" *ngIf="currentUser.isAdmin">
+        <i class="fas fa-plus add-board-icon"></i> New
+      </button>
+
+      <input type="text" class="search-board-input margin-left-3" placeholder="Search/Filter Board">
+
+      <div class="circle-buttons">
+        <button class="circle-button margin-left-2">
+          <i class="far fa-user"></i>
+        </button>
+
+        <button class="circle-button margin-left-2">
+          <i class="fas fa-filter"></i>
+        </button>
+      </div>
+    </div>
+
+    <app-tasks-table *ngFor="let taskCategory of currentProject.taskCategories" class="margin-top-3"
+                     [taskCategory]="taskCategory" [allTasks]="tasks"></app-tasks-table>
   </div>
-  <div class="boards-management margin-top-4 margin-left-2">
-    <div class="collapse-button-container">
-      <button class="collapse-button">
-        <i class="fas fa-chevron-down"></i>
-        <i class="fas fa-chevron-up"></i>
-      </button>
-    </div>
-
-    <button class="add-board-btn margin-left-3">
-      <i class="fas fa-plus add-board-icon"></i> New
-    </button>
-
-    <input type="text" class="search-board-input margin-left-3" placeholder="Search/Filter Board">
-
-    <div class="circle-buttons">
-      <button class="circle-button margin-left-2">
-        <i class="far fa-user"></i>
-      </button>
-
-      <button class="circle-button margin-left-2">
-        <i class="fas fa-filter"></i>
-      </button>
-    </div>
-  </div>
-
-  <app-tasks-table class="margin-top-3"></app-tasks-table>
 </div>

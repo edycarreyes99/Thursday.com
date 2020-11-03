@@ -8,8 +8,8 @@ import {DashboardViewComponent} from './views/dashboard-view/dashboard-view.comp
 const routes: Routes = [
   {path: '', component: LoginViewComponent},
   {path: 'login', component: LoginViewComponent},
-  {path: 'dashboard', redirectTo: 'dashboard/boards/1'},
-  {path: 'dashboard/boards/:id', component: DashboardViewComponent},
+  {path: 'dashboard', redirectTo: 'dashboard/boards/'},
+  {path: 'dashboard/boards/:boardId', component: DashboardViewComponent},
 ];
 
 @NgModule({
