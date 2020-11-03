@@ -16,7 +16,7 @@ export class UserModel implements IUser {
     this.password = password;
   }
 
-  // Generates the UID
+  // Method that generates the UID
   generateUID(): string {
     const service = new GlobalService();
     return service.generateID(8, 'U');
