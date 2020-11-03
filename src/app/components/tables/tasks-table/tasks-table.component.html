@@ -1,1 +1,74 @@
-<p>tasks-table works!</p>
+<div class="tasks-table margin-top-5 margin-bottom-2">
+  <table class="table">
+    <thead>
+    <tr>
+      <th>
+        <button class="options-button margin-right-2">
+          <i class="fas fa-caret-down"></i>
+        </button>
+        <div class="task-category">
+          Online Marketing Q1
+        </div>
+      </th>
+
+      <th>Priority</th>
+      <th>Timeline</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        <span class="task">Celebrity Influencer Post</span>
+      </td>
+      <td>
+        <star-rating starType="icon" [rating]="4" staticColor="ok" size="medium"
+                     (ratingChange)="onRate($event)"></star-rating>
+      </td>
+      <td>
+        <input type="text" [locale]="{applyLabel: 'ok', format: 'MMM DD'}" ngxDaterangepickerMd
+               [(ngModel)]="selected" class="task-timeline" (change)="onRate($event)" placeholder="Select date"
+               readonly/>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="task">Facebook Contest</span>
+      </td>
+      <td>
+        <star-rating starType="icon" [rating]="2" staticColor="ok" size="medium"
+                     (ratingChange)="onRate($event)"></star-rating>
+      </td>
+      <td>
+        <input type="text" [locale]="{applyLabel: 'ok', format: 'MMM DD'}" ngxDaterangepickerMd
+               [(ngModel)]="selected" class="task-timeline" (change)="onRate($event)" placeholder="Select date"
+               readonly/>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="task">Video Campaing</span>
+      </td>
+      <td>
+        <star-rating starType="icon" [rating]="5" staticColor="ok" size="medium"
+                     (ratingChange)="onRate($event)"></star-rating>
+      </td>
+      <td>
+        <input type="text" [locale]="{applyLabel: 'ok', format: 'MMM DD'}" ngxDaterangepickerMd
+               [(ngModel)]="selected" class="task-timeline" (change)="onRate($event)" placeholder="Select date"
+               readonly opens="right"/>
+      </td>
+    </tr>
+
+    <tr>
+      <td colspan="3" class="add-task-row">
+        <input type="text" class="add-task-input" placeholder="Crete a New Pulse (Row)">
+      </td>
+    </tr>
+
+    <tr>
+      <td></td>
+      <td>3.7 / 5</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

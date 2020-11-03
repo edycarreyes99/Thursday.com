@@ -1,0 +1,126 @@
+@import "src/scss/base";
+
+.tasks-table {
+  .table {
+    width: 100% !important;
+
+    thead {
+      text-align: left;
+
+      th {
+        font-family: "roboto-thin", serif !important;
+        font-weight: bold;
+
+        &:first-child {
+          font-size: 1.3rem;
+          display: flex;
+          align-items: center;
+          color: $primary;
+
+          &:hover {
+            .task-category {
+              border: 1px dashed $grey-border;
+            }
+          }
+        }
+
+        &:not(:first-child) {
+          text-align: center;
+          font-family: "roboto-regular", serif !important;
+          color: $dark-grey;
+          font-size: 1rem;
+        }
+
+        .options-button {
+          font-size: 0.8rem;
+          background-color: $primary;
+          color: $white;
+          border-radius: 50%;
+          width: 1.2rem;
+          height: 1.2rem;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        td {
+          font-family: "roboto-regular", serif !important;
+          font-weight: normal;
+          height: 2.5rem;
+          background-color: $super-light;
+          padding: 0 !important;
+
+          &:first-child {
+            .task {
+              margin-left: 1.7rem !important;
+              padding-left: 0.5rem !important;
+              border-left: 0.5rem solid $primary;
+              height: 100%;
+            }
+
+            &:hover {
+              .task {
+                border: 1px dashed $dark-grey;
+              }
+            }
+          }
+
+          &:not(:first-child) {
+            text-align: center;
+          }
+        }
+
+        &:last-child {
+          td {
+            &:first-child {
+              background-color: $white;
+            }
+          }
+        }
+
+        .add-task-row {
+          padding-left: 1.5rem !important;
+
+          .add-task-input {
+            width: 100%;
+            height: 100%;
+            background-color: $super-light;
+            font-size: 1rem;
+            border: none;
+
+            &::placeholder {
+              font-size: 1rem;
+              padding-left: 1rem;
+            }
+
+            &:focus, &:hover {
+              border: 1px solid $primary;
+            }
+          }
+        }
+
+        .task-timeline {
+          background-color: $green;
+          border: none;
+          border-radius: 2rem;
+          height: 1.8rem;
+          color: $white;
+          text-align: center;
+          font-family: "roboto-regular", serif !important;
+
+          &:hover {
+            cursor: pointer;
+          }
+
+          &::placeholder {
+            font-size: 1rem;
+            color: $white;
+            font-family: "roboto-regular", serif !important;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
