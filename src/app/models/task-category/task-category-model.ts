@@ -1,4 +1,5 @@
 import {ITaskCategory} from '../../interfaces/task-category';
+import {GlobalService} from '../../services/global/global.service';
 
 export class TaskCategoryModel implements ITaskCategory {
   TCID: string;
@@ -10,12 +11,7 @@ export class TaskCategoryModel implements ITaskCategory {
   }
 
   generateTID(): string {
-    let tid = '';
-    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_';
-    const charLength = chars.length;
-    for (let i = 0; i < 8; i++) {
-      tid += chars.charAt(Math.floor(Math.random() * charLength));
-    }
-    return tid;
+    const service = new GlobalService();
+    return service.generateID(8, 'TC');
   }
 }
