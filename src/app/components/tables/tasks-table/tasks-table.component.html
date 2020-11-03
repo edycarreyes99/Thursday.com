@@ -7,7 +7,7 @@
           <i class="fas fa-caret-down"></i>
         </button>
         <div class="task-category">
-          Online Marketing Q1
+          {{taskCategory.name}}
         </div>
       </th>
 
@@ -16,46 +16,21 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
+
+    <tr *ngFor="let task of tasks; index as i">
       <td>
-        <span class="task">Celebrity Influencer Post</span>
+        <span class="task">{{task.name}}</span>
       </td>
+
       <td>
-        <star-rating starType="icon" [rating]="4" staticColor="ok" size="medium"
+        <star-rating starType="icon" [rating]="task.priority" staticColor="ok" size="medium"
                      (ratingChange)="onRate($event)"></star-rating>
       </td>
+
       <td>
         <input type="text" [locale]="{applyLabel: 'ok', format: 'MMM DD'}" ngxDaterangepickerMd
-               [(ngModel)]="selected" class="task-timeline" (change)="onRate($event)" placeholder="Select date"
+               [(ngModel)]="task.timeline" class="task-timeline" (change)="onRate($event)" placeholder="Select date"
                readonly/>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="task">Facebook Contest</span>
-      </td>
-      <td>
-        <star-rating starType="icon" [rating]="2" staticColor="ok" size="medium"
-                     (ratingChange)="onRate($event)"></star-rating>
-      </td>
-      <td>
-        <input type="text" [locale]="{applyLabel: 'ok', format: 'MMM DD'}" ngxDaterangepickerMd
-               [(ngModel)]="selected" class="task-timeline" (change)="onRate($event)" placeholder="Select date"
-               readonly/>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="task">Video Campaing</span>
-      </td>
-      <td>
-        <star-rating starType="icon" [rating]="5" staticColor="ok" size="medium"
-                     (ratingChange)="onRate($event)"></star-rating>
-      </td>
-      <td>
-        <input type="text" [locale]="{applyLabel: 'ok', format: 'MMM DD'}" ngxDaterangepickerMd
-               [(ngModel)]="selected" class="task-timeline" (change)="onRate($event)" placeholder="Select date"
-               readonly opens="right"/>
       </td>
     </tr>
 
@@ -67,7 +42,7 @@
 
     <tr>
       <td></td>
-      <td>3.7 / 5</td>
+      <td>{{generatePriorityProm()}} / 5</td>
     </tr>
     </tbody>
   </table>

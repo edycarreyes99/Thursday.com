@@ -51,20 +51,13 @@
       </div>
 
       <div class="boards margin-top-5">
-        <span class="main-boards-title"><b>Main  4</b></span>
+        <span class="main-boards-title"><b>Main  {{projects.length}}</b></span>
 
         <div class="boards-list">
-          <a class="margin-top-2 board-item active" href="">
-            R&D Scrum Planning
-          </a>
-          <a class="margin-top-2 board-item" href="">
-            Product
-          </a>
-          <a class="margin-top-2 board-item" href="">
-            Human Resources
-          </a>
-          <a class="margin-top-2 board-item" href="">
-            Marketing Content Planning
+
+          <a *ngFor="let project of projects; index as i" class="margin-top-2 board-item"
+             [routerLink]="['/dashboard/boards/', project.id]" routerLinkActive="active">
+            {{project.name}}
           </a>
 
           <button class="add-board-btn margin-top-3 float-right" id="add-board-btn">
@@ -89,11 +82,15 @@
     </div>
 
     <div class="boards-bottom" id="boards-bottom">
-      <a class="margin-top-2 board-bottom-item" href="">
+      <a class="margin-top-2 board-bottom-item">
         <i class="fas fa-columns board-icon"></i> Dashboards
       </a>
-      <a class="margin-top-2 board-bottom-item" href="">
+      <a class="margin-top-2 board-bottom-item">
         <i class="fas fa-calendar-check board-icon"></i> My Week
+      </a>
+
+      <a class="margin-top-2 board-bottom-item" routerLink="/">
+        <i class="fas fa-sign-out-alt board-icon"></i> Logout
       </a>
     </div>
   </div>
