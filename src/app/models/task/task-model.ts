@@ -2,6 +2,7 @@ import {ITask} from '../../interfaces/task';
 import {Moment} from 'moment';
 import {ITaskCategory} from '../../interfaces/task-category';
 import {IUser} from '../../interfaces/user';
+import {GlobalService} from '../../services/global/global.service';
 
 export class TaskModel implements ITask {
   TID: string;
@@ -24,12 +25,7 @@ export class TaskModel implements ITask {
 
   // Mehod to generate the Task's ID
   generateTID(): string {
-    let tid = '';
-    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_';
-    const charLength = chars.length;
-    for (let i = 0; i < 8; i++) {
-      tid += chars.charAt(Math.floor(Math.random() * charLength));
-    }
-    return tid;
+    const service = new GlobalService();
+    return service.generateID(8, 'T');
   }
 }
