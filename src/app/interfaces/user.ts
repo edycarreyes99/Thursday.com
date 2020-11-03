@@ -4,4 +4,6 @@ export interface IUser {
   name: string;
   password: string;
   UID: string;
+
+  generateUID(): string;
 }
