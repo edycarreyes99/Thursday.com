@@ -1,5 +1,5 @@
 <div class="dashboard-view">
-  <div *ngIf="currentProject !== undefined">
+  <div *ngIf="boardID !== '' && boardID !== null else noProjectSelected">
     <div class="header">
       <div class="boards-info">
         <h2 class="board-title">{{currentProject !== undefined ? currentProject.name : ''}}</h2>
@@ -43,7 +43,15 @@
       </div>
     </div>
 
-    <app-tasks-table *ngFor="let taskCategory of currentProject.taskCategories" class="margin-top-3"
-                     [taskCategory]="taskCategory" [allTasks]="tasks"></app-tasks-table>
+    <div class="task-tables" *ngIf="currentProject !== null && currentProject !== undefined">
+      <app-tasks-table *ngFor="let taskCategory of currentProject.taskCategories" class="margin-top-3"
+                       [taskCategory]="taskCategory" [allTasks]="tasks"></app-tasks-table>
+    </div>
   </div>
+
+  <ng-template #noProjectSelected>
+    <div class="noProjectSelected">
+      <h2><i class="fas fa-arrow-left"></i> Select or create a project.</h2>
+    </div>
+  </ng-template>
 </div>

@@ -9,6 +9,7 @@ const routes: Routes = [
   {path: '', component: LoginViewComponent},
   {path: 'login', component: LoginViewComponent},
   {path: 'dashboard', redirectTo: 'dashboard/boards/'},
+  {path: 'dashboard/boards', component: DashboardViewComponent},
   {path: 'dashboard/boards/:boardId', component: DashboardViewComponent},
 ];
 

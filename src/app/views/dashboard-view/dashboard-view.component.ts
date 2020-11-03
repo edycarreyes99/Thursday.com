@@ -33,13 +33,16 @@ export class DashboardViewComponent implements OnInit {
     this.sideNav.showBoards();
     this.route.paramMap.subscribe(params => {
       this.boardID = params.get('boardId');
-      this.updateView();
+      if (this.boardID !== null) {
+        this.updateView();
+      }
     });
   }
 
   updateView(): void {
     this.globalService.getTasks().subscribe((tasks: ITask[]) => this.tasks = tasks);
     this.globalService.getProject(this.boardID).subscribe((project: IProject) => this.currentProject = project);
+    console.log(this.currentProject);
   }
 
 }
