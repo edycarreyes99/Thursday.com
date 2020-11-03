@@ -7,6 +7,7 @@ import {AppComponent} from './app.component';
 
 // Custom services
 import {GlobalService} from './services/global/global.service';
+import {DatabaseService} from './services/database/database.service';
 
 // Custom modules
 import {StarRatingModule} from 'angular-star-rating';
@@ -43,6 +44,7 @@ import {TasksTableComponent} from './components/tables/tasks-table/tasks-table.c
   providers: [
     // Custom services
     GlobalService,
+    DatabaseService,
 
     // Custom components
     SidenavComponent,
