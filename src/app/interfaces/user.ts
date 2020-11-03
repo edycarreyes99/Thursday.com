@@ -5,5 +5,6 @@ export interface IUser {
   password: string;
   UID: string;
 
+  // Method to generate a UID
   generateUID(): string;
 }
