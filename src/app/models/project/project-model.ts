@@ -1,6 +1,7 @@
 import {IProject} from '../../interfaces/project';
 import {IUser} from '../../interfaces/user';
 import {ITaskCategory} from '../../interfaces/task-category';
+import {GlobalService} from '../../services/global/global.service';
 
 export class ProjectModel implements IProject {
   PID: string;
@@ -21,12 +22,7 @@ export class ProjectModel implements IProject {
 
   // Method to generate the Project's ID
   generatePID(): string {
-    let pid = '';
-    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_';
-    const charLength = chars.length;
-    for (let i = 0; i < 8; i++) {
-      pid += chars.charAt(Math.floor(Math.random() * charLength));
-    }
-    return pid;
+    const service = new GlobalService();
+    return service.generateID(8, 'P');
   }
 }
