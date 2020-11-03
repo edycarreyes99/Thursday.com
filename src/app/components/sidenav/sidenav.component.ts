@@ -17,7 +17,7 @@ export class SidenavComponent implements OnInit {
   boardsActive = true;
 
   // Component variables
-  projects: IProject[];
+  projects: IProject[] = [];
 
   constructor(
     private globalService: GlobalService

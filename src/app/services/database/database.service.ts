@@ -41,8 +41,8 @@ export class DatabaseService implements InMemoryDbService {
      */
     const users: IUser[] = [
       new UserModel('rootadmin@thursday.com', true, 'Root Admin', 'R00t@dm!n'),
-      new UserModel('usera@thursday.com', false, 'User A', 'us3rA'),
-      new UserModel('userb@thursday.com', false, 'User B', 'us3rB'),
+      new UserModel('usera@thursday.com', false, 'User A', 'us3rA!'),
+      new UserModel('userb@thursday.com', false, 'User B', 'us3rB!'),
     ];
 
     /**

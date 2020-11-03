@@ -12,6 +12,7 @@ export class DashboardViewComponent implements OnInit {
   constructor(
     private sideNav: SidenavComponent
   ) {
+    console.log('The currentuser is:', localStorage.getItem('currentUser'));
   }
 
   ngOnInit(): void {
