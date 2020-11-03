@@ -5,6 +5,9 @@ import {FormsModule} from '@angular/forms';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 
+// Custom services
+import {GlobalService} from './services/global/global.service';
+
 // Custom modules
 import {StarRatingModule} from 'angular-star-rating';
 import {NgxDaterangepickerMd} from 'ngx-daterangepicker-material';
@@ -15,6 +18,7 @@ import {NavbarComponent} from './components/navbar/navbar.component';
 import {DashboardViewComponent} from './views/dashboard-view/dashboard-view.component';
 import {SidenavComponent} from './components/sidenav/sidenav.component';
 import {TasksTableComponent} from './components/tables/tasks-table/tasks-table.component';
+
 
 @NgModule({
   declarations: [
@@ -37,7 +41,11 @@ import {TasksTableComponent} from './components/tables/tasks-table/tasks-table.c
     NgxDaterangepickerMd.forRoot(),
   ],
   providers: [
-    SidenavComponent
+    // Custom services
+    GlobalService,
+
+    // Custom components
+    SidenavComponent,
   ],
   bootstrap: [AppComponent]
 })
