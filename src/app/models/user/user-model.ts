@@ -1,18 +1,18 @@
 import {IUser} from '../../interfaces/user';
 
 export class UserModel implements IUser {
+  UID: string;
   email: string;
   isAdmin: boolean;
   name: string;
   password: string;
-  UID: string;
 
-  constructor(email, isAdmin, name, password) {
+  constructor(email: string, isAdmin: boolean, name: string, password: string) {
+    this.UID = this.generateUID();
     this.email = email;
     this.isAdmin = isAdmin;
     this.name = name;
     this.password = password;
-    this.UID = this.generateUID();
   }
 
   // Generates the UID
