@@ -10,12 +10,14 @@ $primary-hover-light: #CFE7FF;
 $grey: #c5c7d0;
 $grey-border: #c5c7d0;
 $light-grey: #e0e0e0;
+$super-light: #F5F6F8;
 $semi-dark: #323338;
 $dark-grey: #777;
 $white: #FFFFFF;
 $yellow: #D9C15F;
 $purple: #984EE0;
 $fuchsia: #F75672;
+$green: #00a25b;
 $theme-colors: (
   'blue-navy': $color-blue-navy,
   'custom-light': $light,
@@ -28,6 +30,7 @@ $theme-colors: (
   'primary':$primary,
   'primary-hover':$primary-hover,
   'primary-hover-light':$primary-hover-light,
+  'super-light':$super-light,
   'semi-dark':$semi-dark,
   'secondary':$secondary,
   'secondary-selected':$secondary-selected,
@@ -35,4 +38,5 @@ $theme-colors: (
   'yellow':$yellow,
   'purple':$purple,
   'fuchsia':$fuchsia,
+  'green':$green,
 );

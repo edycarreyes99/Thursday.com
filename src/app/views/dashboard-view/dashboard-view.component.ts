@@ -15,6 +15,7 @@ export class DashboardViewComponent implements OnInit {
 
   ngOnInit(): void {
     this.sideNav.openSideNav();
+    this.sideNav.showBoards();
   }
 
 }

@@ -38,8 +38,11 @@
     </div>
   </div>
   <div id="boards-container" class="boards-container">
-    <button id="close-boards-btn" class="close-boards-btn" (click)="toggleBoards()">
-      <i class="fas fa-chevron-left" id="toggleIcon"></i>
+    <button class="close-boards-btn" (click)="toggleBoards()" *ngIf="boardsActive">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <button class="close-boards-btn" (click)="toggleBoards()" *ngIf="!boardsActive">
+      <i class="fas fa-chevron-right"></i>
     </button>
     <div class="boards-top">
       <div class="boards-title">
@@ -48,7 +51,7 @@
       </div>
 
       <div class="boards margin-top-5">
-        <span class="main-boards-title"><b>Main  0</b></span>
+        <span class="main-boards-title"><b>Main  4</b></span>
 
         <div class="boards-list">
           <a class="margin-top-2 board-item active" href="">
@@ -78,7 +81,7 @@
           <span class="shareable-boards-title margin-top-5"><b>Private <i
             class="fas fa-lock desc-boards-icon"></i>  0</b></span>
 
-          <button class="add-board-btn add-private-btn margin-top-3 float-right" id="add-private-btn">
+          <button class="add-board-btn add-private-btn margin-top-3 float-right margin-bottom-3" id="add-private-btn">
             <i class="fas fa-plus add-board-icon"></i> New
           </button>
         </div>
@@ -94,7 +97,7 @@
       </a>
     </div>
   </div>
-  <div id="main">
+  <div class="margin-active" id="main">
     <router-outlet></router-outlet>
   </div>
 </div>

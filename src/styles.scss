@@ -1,5 +1,6 @@
 /*Include fonts configuration*/
-@import "base";
+@import "scss/base";
+@import '~css-star-rating/scss/star-rating';
 
 * {
   font-family: "roboto-regular", serif !important;
@@ -12,4 +13,65 @@ hr {
   margin-bottom: 1.25rem !important;
   border: 0 !important;
   border-top: 1px solid $light-grey !important;
+}
+
+button:focus {
+  outline: none !important;
+}
+
+input:focus {
+  outline: none !important;
+}
+
+button {
+  border: none;
+}
+
+button {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+
+::-webkit-scrollbar {
+  -webkit-appearance: none
+}
+
+::-webkit-scrollbar:vertical {
+  width: 8px
+}
+
+::-webkit-scrollbar:horizontal {
+  height: 10px
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--black-transparent-20, rgba(0, 0, 0, 0.2));
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+
+star-rating, .star-container, .medium, .rating, .star-icon, .color-ok, .value-3 {
+  outline: none !important;
+
+  &:focus {
+    outline: none !important;
+  }
+}
+
+.md-drppicker {
+  left: auto !important;
+  right: 5.1rem !important;
+}
+
+.btn {
+  width: 5rem !important;
+  margin: 1rem !important;
+  background-color: $primary !important;
+  font-family: "roboto-medium", serif !important;
+}
+
+.start-date, .end-date {
+  background-color: $primary !important;
 }

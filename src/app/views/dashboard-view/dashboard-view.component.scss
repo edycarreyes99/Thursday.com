@@ -1,0 +1,186 @@
+@import "src/scss/base";
+
+.dashboard-view {
+  .header {
+    display: flex;
+    justify-content: space-between;
+
+    .boards-info {
+      display: flex;
+      flex-direction: column;
+
+      .board-title {
+        font-family: "roboto-regular", serif !important;
+        cursor: text;
+        padding: 0.5rem !important;
+
+        &:hover {
+          border: 1px dashed $grey-border;
+        }
+      }
+
+      .board-desc {
+        font-family: "roboto-medium", serif !important;
+        color: $grey;
+        cursor: text;
+        padding: 0.5rem !important;
+
+        &:hover {
+          border: 1px dashed $grey-border;
+        }
+      }
+    }
+
+    .boards-actions {
+      display: flex;
+
+      .button-outline, .button-flat {
+        border: 1px solid $light-grey;
+        border-radius: 0.4rem;
+        font-size: 1rem;
+        padding: 0.7rem !important;
+        background-color: $white;
+        color: $semi-dark;
+        margin-right: 0.5rem !important;
+        max-height: 3rem;
+
+        &:hover {
+          background-color: $light-grey;
+        }
+      }
+
+      .button-flat {
+        border: none !important;
+      }
+
+      .group-button {
+        border-radius: 0.4rem;
+        margin-right: 0.2rem !important;
+        max-height: 3rem;
+
+        button {
+          border: 1px solid $light-grey;
+          background-color: $white;
+          font-size: 1rem;
+          color: $semi-dark;
+          padding: 10px 24px !important;
+          cursor: pointer;
+          float: left;
+          height: 3rem;
+
+          &:not(:last-child) {
+            border-right: none;
+          }
+
+          &:first-child {
+            border-top-left-radius: 0.4rem;
+            border-bottom-left-radius: 0.4rem;
+          }
+
+          &:last-child {
+            border-top-right-radius: 0.4rem;
+            border-bottom-right-radius: 0.4rem;
+            color: $primary;
+          }
+
+          &:hover {
+            background-color: $light-grey;
+          }
+        }
+
+        &:after {
+          content: "";
+          clear: both;
+          display: table;
+        }
+      }
+    }
+  }
+
+  .boards-management {
+    display: flex;
+
+    .collapse-button-container {
+      border-right: 1px solid $grey-border;
+      padding-right: 1rem !important;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .collapse-button {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        font-size: 0.6rem;
+
+        &:hover {
+          background-color: $light-grey;
+        }
+      }
+    }
+
+    .add-board-btn {
+      background-color: $primary;
+      color: $white;
+
+      border: none;
+      border-radius: 2rem;
+      font-size: 0.9rem;
+      font-family: "roboto-medium", serif !important;
+      max-width: 10rem;
+      width: 6rem;
+      height: 2.5rem;
+
+      .add-board-icon {
+        margin-right: 0.5rem !important;
+      }
+
+      &:hover {
+        background-color: $primary-hover;
+      }
+    }
+
+    .search-board-input {
+      border: 1px solid $grey-border;
+      border-radius: 2rem;
+      padding: 1rem !important;
+      font-size: 1rem;
+      color: $dark-grey;
+      font-family: "roboto-medium", serif !important;
+      height: 0.5rem;
+      width: 20rem;
+
+      &::placeholder {
+        color: $grey;
+      }
+
+      &:focus {
+        border-color: $primary;
+      }
+    }
+
+    .circle-buttons {
+      display: flex;
+      align-items: center;
+
+      .circle-button {
+        border: 1px solid $grey-border;
+        border-radius: 50%;
+        font-size: 1rem;
+        width: 2rem;
+        height: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+          background-color: $light-grey;
+        }
+      }
+    }
+  }
+}

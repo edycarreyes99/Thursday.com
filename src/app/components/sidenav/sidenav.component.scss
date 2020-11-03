@@ -1,4 +1,4 @@
-@import "src/base";
+@import "src/scss/base";
 
 .sidenav-component {
   /* The side navigation menu */
@@ -210,10 +210,23 @@
     }
   }
 
+  .margin-active {
+    margin-left: 23.2rem !important;
+    padding: 2.5rem !important;
+  }
+
+  .margin-deactivate {
+    margin-left: 7.12rem !important;
+    padding: 2.5rem !important;
+  }
+
+  .margin-none {
+    margin-left: 0 !important;
+    padding: 0 !important;
+  }
+
   #main {
     transition: margin-left .5s;
-    padding: 20px;
-    margin-left: 23.2rem !important;
   }
 
   /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
