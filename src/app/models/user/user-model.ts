@@ -1,4 +1,5 @@
 import {IUser} from '../../interfaces/user';
+import {GlobalService} from '../../services/global/global.service';
 
 export class UserModel implements IUser {
   UID: string;
@@ -17,12 +18,7 @@ export class UserModel implements IUser {
 
   // Generates the UID
   generateUID(): string {
-    let uid = '';
-    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_';
-    const charLength = chars.length;
-    for (let i = 0; i < 8; i++) {
-      uid += chars.charAt(Math.floor(Math.random() * charLength));
-    }
-    return uid;
+    const service = new GlobalService();
+    return service.generateID(8, 'U');
   }
 }
