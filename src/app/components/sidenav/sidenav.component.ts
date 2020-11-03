@@ -3,6 +3,7 @@ import {IProject} from '../../interfaces/project';
 import {GlobalService} from '../../services/global/global.service';
 import {IUser} from '../../interfaces/user';
 import {Router} from '@angular/router';
+import {FormControl, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-sidenav',
@@ -17,9 +18,14 @@ export class SidenavComponent implements OnInit {
   boardsBottomElement: HTMLElement;
   mainElement: HTMLElement;
   boardsActive = true;
+  addBoardModalElement: HTMLElement;
 
   // Component variables
   projects: IProject[] = [];
+  newBoardTitle = new FormControl('Empty board', [
+    Validators.required,
+    Validators.minLength(2)
+  ]);
 
   constructor(
     private globalService: GlobalService
@@ -31,6 +37,13 @@ export class SidenavComponent implements OnInit {
     this.boardsElement = document.getElementById('boards-container');
     this.boardsBottomElement = document.getElementById('boards-bottom');
     this.mainElement = document.getElementById('main');
+    this.addBoardModalElement = document.getElementById('addBoardModal');
+
+    window.onclick = (event) => {
+      if (event.target === this.addBoardModalElement) {
+        this.closeAddBoardModal();
+      }
+    };
   }
 
   // Method to close the sidenav
@@ -92,6 +105,18 @@ export class SidenavComponent implements OnInit {
 
       console.log(this.projects);
     });
+  }
+
+  showAddBoardModal(): void {
+    console.log('Showing add board modal');
+    this.newBoardTitle.setValue('');
+    this.addBoardModalElement.style.display = 'block';
+  }
+
+  closeAddBoardModal(): void {
+    console.log('Closing add board modal');
+    this.newBoardTitle.setValue('');
+    this.addBoardModalElement.style.display = 'none';
   }
 
 }

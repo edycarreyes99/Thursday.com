@@ -60,7 +60,7 @@
             {{project.name}}
           </a>
 
-          <button class="add-board-btn margin-top-3 float-right" id="add-board-btn">
+          <button class="add-board-btn margin-top-3 float-right" id="add-board-btn" (click)="showAddBoardModal()">
             <i class="fas fa-plus add-board-icon"></i> New
           </button>
 
@@ -95,6 +95,27 @@
     </div>
   </div>
   <div class="margin-active" id="main">
+    <div id="addBoardModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-title">
+          <span class="title">Add new board</span>
+          <span class="close" (click)="closeAddBoardModal()">&times;</span>
+        </div>
+        <div class="modal-body">
+          <input type="text" class="newBoardName margin-top-3" placeholder="Empty board" [formControl]="newBoardTitle">
+          <span class="visibility">Visible to everyone on thursday.</span>
+        </div>
+
+        <div class="modal-footer">
+          <div class="actions">
+            <button class="button-flat text-dark-grey">
+              Cancelar
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
     <router-outlet></router-outlet>
   </div>
 </div>

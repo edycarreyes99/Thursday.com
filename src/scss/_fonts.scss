@@ -137,5 +137,13 @@
 
 /*Fonts colors*/
 .text-primary {
-  color: $primary;
+  color: $primary !important;
+}
+
+.text-grey {
+  color: $grey !important;
+}
+
+.text-dark-grey {
+  color: $dark-grey !important;
 }
