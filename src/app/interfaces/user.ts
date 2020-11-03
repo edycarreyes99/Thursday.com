@@ -3,7 +3,7 @@ export interface IUser {
   isAdmin: boolean;
   name: string;
   password: string;
-  UID: string;
+  id: string;
 
   // Method to generate a UID
   generateUID(): string;

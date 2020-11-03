@@ -1,6 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -12,6 +13,7 @@ import {DatabaseService} from './services/database/database.service';
 // Custom modules
 import {StarRatingModule} from 'angular-star-rating';
 import {NgxDaterangepickerMd} from 'ngx-daterangepicker-material';
+import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
 
 // Components and Views
 import {LoginViewComponent} from './views/login-view/login-view.component';
@@ -36,10 +38,12 @@ import {TasksTableComponent} from './components/tables/tasks-table/tasks-table.c
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
 
     // Custom Modules
     StarRatingModule.forRoot(),
     NgxDaterangepickerMd.forRoot(),
+    InMemoryWebApiModule.forRoot(DatabaseService)
   ],
   providers: [
     // Custom services
