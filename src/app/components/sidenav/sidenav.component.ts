@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {IProject} from '../../interfaces/project';
+import {GlobalService} from '../../services/global/global.service';
 
 @Component({
   selector: 'app-sidenav',
@@ -7,13 +9,19 @@ import {Component, OnInit} from '@angular/core';
 })
 export class SidenavComponent implements OnInit {
 
+  // DOM manipulations variables
   sidenavElement: HTMLElement;
   boardsElement: HTMLElement;
   boardsBottomElement: HTMLElement;
   mainElement: HTMLElement;
   boardsActive = true;
 
-  constructor() {
+  // Component variables
+  projects: IProject[];
+
+  constructor(
+    private globalService: GlobalService
+  ) {
   }
 
   ngOnInit(): void {
@@ -21,16 +29,22 @@ export class SidenavComponent implements OnInit {
     this.boardsElement = document.getElementById('boards-container');
     this.boardsBottomElement = document.getElementById('boards-bottom');
     this.mainElement = document.getElementById('main');
+
+    // Get all the projects
+    this.getProjects();
   }
 
+  // Method to close the sidenav
   closeSideNav(): void {
     this.sidenavElement.style.width = '0rem';
   }
 
+  // Method to open the sidenav
   openSideNav(): void {
     this.sidenavElement.style.width = '4.12rem';
   }
 
+  // Method to toggle the board's sidenav
   toggleBoards(): void {
     if (this.boardsElement.style.width === '0rem') {
       this.boardsElement.style.width = '16rem';
@@ -49,16 +63,24 @@ export class SidenavComponent implements OnInit {
     }
   }
 
+  // Method to hide the board's sidenav
   hideBoards(): void {
     this.mainElement.classList.remove('margin-active');
     this.mainElement.classList.add('margin-none');
     this.boardsElement.style.display = 'none';
   }
 
+  // Method to show the board's sidenav
   showBoards(): void {
     this.mainElement.classList.remove('margin-none');
     this.mainElement.classList.add('margin-active');
     this.boardsElement.style.display = 'block';
+  }
+
+  getProjects(): void {
+    this.globalService.getProjects().subscribe((projects: IProject[]) => {
+      this.projects = projects;
+    });
   }
 
 }

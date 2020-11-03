@@ -1,12 +1,12 @@
 <div class="sidenav-component">
-  <div id="sidenav" class="sidenav">
+  <div class="sidenav" id="sidenav">
     <div class="nav-top">
       <a href="#">
-        <img class="surface-company-logo-image" src="../../../assets/images/mondaycom-icon.svg"
-             width="40" alt="Monday Logo">
+        <img alt="Monday Logo" class="surface-company-logo-image"
+             src="../../../assets/images/mondaycom-icon.svg" width="40">
       </a>
 
-      <a href="#" class="active">
+      <a class="active" href="#">
         <i class="fas fa-home"></i>
       </a>
       <a href="#">
@@ -37,11 +37,11 @@
       </a>
     </div>
   </div>
-  <div id="boards-container" class="boards-container">
-    <button class="close-boards-btn" (click)="toggleBoards()" *ngIf="boardsActive">
+  <div class="boards-container" id="boards-container">
+    <button (click)="toggleBoards()" *ngIf="boardsActive" class="close-boards-btn">
       <i class="fas fa-chevron-left"></i>
     </button>
-    <button class="close-boards-btn" (click)="toggleBoards()" *ngIf="!boardsActive">
+    <button (click)="toggleBoards()" *ngIf="!boardsActive" class="close-boards-btn">
       <i class="fas fa-chevron-right"></i>
     </button>
     <div class="boards-top">
