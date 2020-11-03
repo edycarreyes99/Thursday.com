@@ -1,11 +1,11 @@
 import {ITaskCategory} from '../../interfaces/task-category';
 
 export class TaskCategoryModel implements ITaskCategory {
-  TID: string;
+  TCID: string;
   name: string;
 
   constructor(name: string) {
-    this.TID = this.generateTID();
+    this.TCID = this.generateTID();
     this.name = name;
   }
 

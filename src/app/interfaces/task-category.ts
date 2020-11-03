@@ -1,5 +1,5 @@
 export interface ITaskCategory {
-  TID: string;
+  TCID: string;
   name: string;
 
   // Method to generate a TaskID
